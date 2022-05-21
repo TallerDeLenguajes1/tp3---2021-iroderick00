@@ -7,10 +7,11 @@
 
 int main(){
     char *buff, *vector[longitud];
-    buff=(char*)malloc(100*sizeof(char));
+    buff=(char*)malloc(30*sizeof(char));
     for (int i = 0; i < longitud; i++)
     {
         printf("Ingrese la cadena de caracteres %d: ",i+1);
+        fflush(stdin);
         gets(buff);
         *(vector+i)=(char*)malloc((strlen(buff)+1)*sizeof(char));
         strcpy(*(vector+i),buff);
@@ -22,6 +23,7 @@ int main(){
         puts(*(vector+j));
         free(*(vector+j));
     }
+    fflush(stdin);
     getchar();
     return 0;
 }
